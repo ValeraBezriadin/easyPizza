@@ -1,0 +1,79 @@
+ul,
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:root {
+  /* colors */
+  --primary: #ff7010;
+  --black: #191919;
+  --text: #a5a5a5;
+  --line: #f0f0f0;
+  --bg-secondary: #f9f9f9;
+  --white: #ffffff;
+  --red: #e23535;
+  --light-primary: #ffeee2;
+  --green: #24d17e;
+  /* font sizes */
+  --text-size-xs: 10px;
+  --text-size-s: 12px;
+  --text-size-m: 16px;
+  --text-size-ml: 20px;
+  --text-size-l: 24px;
+  --text-size-xl: 32px;
+  --text-size-xxl: 40px;
+}
+.main {
+  width: 100%;
+}
+
+.container {
+  max-width: 1310px;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 500px) {
+}
