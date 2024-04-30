@@ -13,6 +13,7 @@
   flex-direction: column;
   gap: 20px;
   padding: 0 0 20px 0;
+  border-bottom: 1px solid var(--line);
 }
 .nav__menu_item {
   font-size: var(--text-size-m);
@@ -26,25 +27,11 @@
   height: 1px;
   background-color: var(--line);
 }
-.nav__social {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px 0 calc(20px + 3vh) 0;
-}
-.nav__social_item {
-  display: flex;
-  gap: 10px;
-}
-.nav__social_item:last-child {
-  gap: 25px;
-}
-.nav__social_wrraper {
-  display: flex;
-  gap: 10px;
-}
+
 .nav__menu_time {
   padding: 15px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 @media screen and (min-height: 768px) {
   .nav__menu_list {
