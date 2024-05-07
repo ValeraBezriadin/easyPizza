@@ -1,0 +1,27 @@
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  backdrop-filter: none;
+  background-color: rgba(25, 25, 25, 0);
+  z-index: 0;
+  pointer-events: none;
+  transition: background-color, backdrop-filter 0.5s ease-in;
+}
+.modal.active {
+  width: 100vw;
+  height: 100vh;
+  pointer-events: auto;
+  backdrop-filter: blur(2px);
+  z-index: 10;
+  background-color: rgba(25, 25, 25, 0.4);
+}
+
+/* .modal.active {
+  transition: 0.7s ease-in;
+  backdrop-filter: none;
+  pointer-events: auto;
+  background: rgba(25, 25, 25, 0);
+} */

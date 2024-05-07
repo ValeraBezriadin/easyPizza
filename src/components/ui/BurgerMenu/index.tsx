@@ -2,15 +2,20 @@ import Link from "next/link";
 import React, { FC } from "react";
 import css from "./style.module.css";
 import { useBurgerMenuStore } from "@/store/burgerMenuStore";
+import Socials from "../Socials";
+import { userCartMenu } from "@/store/cartMenu";
 
 const BurgerMenu: FC = () => {
-  const { menuIsOpen } = useBurgerMenuStore();
-  if (!menuIsOpen) {
+  const { burgerMenuIsOpen, burgerMenuToggle } = useBurgerMenuStore();
+  const { cartMenuIsOpen } = userCartMenu();
+  if (!burgerMenuIsOpen) {
     return null;
+  } else if (cartMenuIsOpen) {
+    burgerMenuToggle();
   }
   return (
     <>
-      {menuIsOpen && (
+      {burgerMenuIsOpen && (
         <div className={css.nav__wrapper}>
           <div className={"container"}>
             <div className={css.nav__menu}>
@@ -40,7 +45,7 @@ const BurgerMenu: FC = () => {
                   <Link href={"#"}>Отследить заказ</Link>
                 </li>
               </ul>
-
+              <Socials />
               <div className={css.nav__menu_time}>
                 <span>Время работы: с 11:00 до 23:00</span>
               </div>

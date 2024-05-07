@@ -1,10 +1,10 @@
 import { create } from "zustand";
 
 interface IMenuState{
-  menuIsOpen:boolean,
-  toggleMenu:()=>void,
+  burgerMenuIsOpen:boolean,
+  burgerMenuToggle:()=>void,
 }
 export const useBurgerMenuStore = create<IMenuState>((set) => ({
-  menuIsOpen: false,
-  toggleMenu: () => set((state) => ({ menuIsOpen: !state.menuIsOpen })),
+  burgerMenuIsOpen: false,
+  burgerMenuToggle: () => set((state) => ({ burgerMenuIsOpen: !state.burgerMenuIsOpen })),
 }));
