@@ -7,9 +7,18 @@ import Image from "next/image";
 import logoImg from "@/static/icons/logoMain.svg";
 import cartImg from "@/static/icons/cart.svg";
 import { userCartMenu } from "@/store/cartMenu";
+import { useBurgerMenuStore } from "@/store/burgerMenuStore";
 
 const DownNavigation: FC = () => {
+  const { burgerMenuIsOpen, burgerMenuToggle } = useBurgerMenuStore();
   const { cartMenuToggle } = userCartMenu();
+  const cartHanddler = () => {
+    if (burgerMenuIsOpen) {
+      burgerMenuToggle();
+    }
+    cartMenuToggle();
+  };
+
   return (
     <>
       <div className={css.nav__down}>
@@ -22,7 +31,7 @@ const DownNavigation: FC = () => {
           </Link>
         </div>
         <BurgerButton />
-        <button className={css.nav__cart} onClick={cartMenuToggle}>
+        <button className={css.nav__cart} onClick={() => cartHanddler()}>
           <span className={css.nav__cart_count}>59</span>
           <Image alt="cart" src={cartImg} width={24} height={24} />
           <span className={css.nav__pirce}>99999₴</span>

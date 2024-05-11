@@ -10,6 +10,7 @@ import { userCartMenu } from "@/store/cartMenu";
 
 const Header: FC = () => {
   const { cartMenuIsOpen, cartMenuToggle } = userCartMenu();
+
   return (
     <>
       <nav className={css.nav}>

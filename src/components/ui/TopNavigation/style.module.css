@@ -6,13 +6,23 @@
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-.nav__time {
+.nav__inner {
   font-size: var(--text-size-s);
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
+.naw__dropdown {
+  display: none;
+}
+
 .nav__text_bold {
   font-weight: 600;
 }
 .nav__top_right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   font-size: var(--text-size-s);
 }
 .nav__time_open {
@@ -34,4 +44,25 @@
   top: -10px;
   left: -10px;
   background-image: url(../../../static/icons/signIn.svg);
+}
+.nav__aprove {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .nav__time_open {
+    display: block;
+  }
+  .nav__aprove {
+    display: block;
+  }
+  .naw__dropdown {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .nav__inner {
+    gap: 20px;
+  }
 }

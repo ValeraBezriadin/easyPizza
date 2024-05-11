@@ -3,16 +3,10 @@ import React, { FC } from "react";
 import css from "./style.module.css";
 import { useBurgerMenuStore } from "@/store/burgerMenuStore";
 import Socials from "../Socials";
-import { userCartMenu } from "@/store/cartMenu";
 
 const BurgerMenu: FC = () => {
-  const { burgerMenuIsOpen, burgerMenuToggle } = useBurgerMenuStore();
-  const { cartMenuIsOpen } = userCartMenu();
-  if (!burgerMenuIsOpen) {
-    return null;
-  } else if (cartMenuIsOpen) {
-    burgerMenuToggle();
-  }
+  const { burgerMenuIsOpen } = useBurgerMenuStore();
+
   return (
     <>
       {burgerMenuIsOpen && (

@@ -9,7 +9,6 @@
   position: absolute;
   top: 100%;
   padding: 15px 20px 0 20px;
-
   height: 90dvh;
   width: 100vw;
   border-top-left-radius: 15px;
@@ -19,6 +18,9 @@
   flex-direction: column;
   justify-content: space-between;
   transition: 0.55s ease-in;
+}
+.cart__close {
+  display: none;
 }
 .cart__list {
   display: flex;
@@ -94,4 +96,30 @@
 .cart__content.active {
   transition: 0.55s ease-in;
   transform: translateY(-100%);
+}
+@media screen and (min-width: 768px) {
+  .cart__container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0;
+  }
+  .cart__content {
+    top: 0;
+    right: -420px;
+    height: 100vh;
+    width: 420px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .cart__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .cart__close {
+    display: block;
+  }
+  .cart__content.active {
+    transition: transform 0.45s ease-in;
+    transform: translateX(-420px);
+  }
 }

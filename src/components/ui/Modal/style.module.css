@@ -6,9 +6,9 @@
   left: 0;
   backdrop-filter: none;
   background-color: rgba(25, 25, 25, 0);
-  z-index: 0;
+  z-index: 10;
   pointer-events: none;
-  transition: background-color, backdrop-filter 0.5s ease-in;
+  transition: background-color 0.65s ease-in, backdrop-filter 0.5s ease-in;
 }
 .modal.active {
   width: 100vw;
