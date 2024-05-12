@@ -11,6 +11,7 @@
 }
 .toggle__icon {
   display: flex;
+  height: auto;
   align-items: center;
   justify-content: center;
   margin-left: 10px;

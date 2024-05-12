@@ -5,21 +5,19 @@ interface IMenuState{
   dropdownMenuToggle:()=>void,
   dropdownMenuList:string[],
   dropdownMenuButtonText:string,
-  dropdownMenuButtonSetText:(string)=>string,
+  dropdownMenuButtonSetText:(text:string)=>void,
 }
 
 export const userdropdownMenu = create<IMenuState>((set)=> ({
   dropdownMenuList:[
     "kiev",
-    "Владивасток",
     "123456789qwer",
     "kiev",
-    "Владивасток",
     "vinicsgaaghoif",
     "vinicvinicsgaaghoiicsgaaghoi",
   ],
   dropdownMenuButtonText:"none",
-  dropdownMenuButtonSetText:(text) => set((state)=>( { dropdownMenuButtonText: text })),
+  dropdownMenuButtonSetText:(text) => set(()=>( { dropdownMenuButtonText: text })),
   dropdownMenuIsOpen:false,
   dropdownMenuToggle:() => set((state)=>( { dropdownMenuIsOpen: !state.dropdownMenuIsOpen})) ,
 }))

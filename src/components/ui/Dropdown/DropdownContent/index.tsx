@@ -1,8 +1,11 @@
-import React from "react";
+import React, { FC } from "react";
 import css from "./style.module.css";
 import cn from "classnames";
 import { userdropdownMenu } from "@/store/dropdownMenuStore";
-const DropdownContent = ({ children }) => {
+interface Iprops {
+  children: React.ReactNode;
+}
+const DropdownContent: FC<Iprops> = ({ children }) => {
   const { dropdownMenuIsOpen } = userdropdownMenu();
   return (
     <div

@@ -8,7 +8,7 @@ import { userdropdownMenu } from "@/store/dropdownMenuStore";
 const DropdownButton: FC = () => {
   const { dropdownMenuIsOpen, dropdownMenuToggle, dropdownMenuButtonText } =
     userdropdownMenu();
-  const trimToThirteen = (item) => {
+  const trimToThirteen = (item: string) => {
     if (item.length > 13) {
       return item.substring(0, 13) + "...";
     }

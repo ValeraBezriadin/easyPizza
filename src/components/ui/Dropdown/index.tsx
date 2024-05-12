@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef } from "react";
 import DropdownButton from "./DropdownButton";
 import DropdownContent from "./DropdownContent";
 import css from "./style.module.css";
