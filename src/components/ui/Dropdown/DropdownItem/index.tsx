@@ -2,11 +2,11 @@ import React, { FC } from "react";
 import css from "./style.module.css";
 import { userdropdownMenu } from "@/store/dropdownMenuStore";
 
-interface DropdownItemProps {
+interface IDropdownItemProps {
   children: string;
 }
 
-const DropdownItem: FC<DropdownItemProps> = ({ children }) => {
+const DropdownItem: FC<IDropdownItemProps> = ({ children }) => {
   const {
     dropdownMenuButtonSetText,
     dropdownMenuButtonText,

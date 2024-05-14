@@ -1,12 +1,13 @@
 import css from "./style.module.css";
 import Image from "next/image";
 import pinImg from "@/static/icons/pin.svg";
-import Dropdown from "../Dropdown";
-import DropdownItem from "../Dropdown/DropdownItem";
-import { userdropdownMenu } from "@/store/dropdownMenuStore";
+// import Dropdown from "../Dropdown";
+// import DropdownItem from "../Dropdown/DropdownItem";
+// import { userdropdownMenu } from "@/store/dropdownMenuStore";
+import SelectedMenu from "@/components/ui/SelectedMenu";
 
 const TopNavigation = () => {
-  const { dropdownMenuList } = userdropdownMenu();
+  // const { dropdownMenuList } = userdropdownMenu();
 
   return (
     <div className={"container"}>
@@ -14,7 +15,7 @@ const TopNavigation = () => {
         <div className={css.nav__inner}>
           <div className={css.naw__dropdown}>
             <Image src={pinImg} alt={"pin"} width={24} height={24} />
-            <Dropdown
+            {/* <Dropdown
               content={
                 <>
                   {dropdownMenuList.map((item, index) => (
@@ -22,7 +23,8 @@ const TopNavigation = () => {
                   ))}
                 </>
               }
-            />
+            /> */}
+            <SelectedMenu />
           </div>
           <span className={css.nav__aprove}>Перевірити адресу</span>
           <span className={css.nav__time}>

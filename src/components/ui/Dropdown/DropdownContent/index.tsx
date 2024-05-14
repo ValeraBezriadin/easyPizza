@@ -2,10 +2,10 @@ import React, { FC } from "react";
 import css from "./style.module.css";
 import cn from "classnames";
 import { userdropdownMenu } from "@/store/dropdownMenuStore";
-interface Iprops {
+interface IProps {
   children: React.ReactNode;
 }
-const DropdownContent: FC<Iprops> = ({ children }) => {
+const DropdownContent: FC<IProps> = ({ children }) => {
   const { dropdownMenuIsOpen } = userdropdownMenu();
   return (
     <div

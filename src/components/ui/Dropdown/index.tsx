@@ -16,6 +16,7 @@ const Dropdown: FC<IProps> = ({ content }) => {
     const handler = (event: MouseEvent) => {
       if (
         dropdownRef.current &&
+        dropdownMenuIsOpen &&
         !dropdownRef.current.contains(event.target as Node)
       ) {
         dropdownMenuToggle();

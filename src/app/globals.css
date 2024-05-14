@@ -76,5 +76,11 @@ a {
   padding: 0 10px;
   margin: 0 auto;
 }
+.css-83ijpv-MuiTypography-root {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100px;
+}
 @media screen and (min-width: 500px) {
 }
