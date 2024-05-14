@@ -1,0 +1,38 @@
+.nav__menu {
+  overflow-x: hidden;
+  position: absolute;
+  top: 95px;
+  left: 0;
+
+  height: calc(100dvh - 95px);
+  width: 100%;
+  padding: 10px 10px 0 10px;
+}
+.nav__menu_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.nav__menu_item {
+  font-size: var(--text-size-m);
+}
+.nav__menu_time {
+  display: flex;
+  padding: 15px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+
+  align-items: center;
+}
+@media screen and (min-height: 768px) {
+  .nav__menu_list {
+    height: 50%;
+    justify-content: space-around;
+  }
+  .nav__social {
+    height: 30%;
+    justify-content: space-around;
+  }
+}
