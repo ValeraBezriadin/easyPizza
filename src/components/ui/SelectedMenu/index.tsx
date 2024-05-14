@@ -4,7 +4,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import css from "./style.module.css";
+
 const options = ["kiev", "shutomur", "afdafadfads adfa ffafa"];
 
 export default function SelectedtMenu() {
