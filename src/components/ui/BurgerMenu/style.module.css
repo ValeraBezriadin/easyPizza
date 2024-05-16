@@ -3,7 +3,8 @@
   position: absolute;
   top: 95px;
   left: 0;
-
+  z-index: 5;
+  background-color: var(--white);
   height: calc(100dvh - 95px);
   width: 100%;
   padding: 10px 10px 0 10px;
