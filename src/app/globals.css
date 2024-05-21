@@ -67,8 +67,9 @@ a {
   --text-size-xl: 32px;
   --text-size-xxl: 40px;
 }
-.main {
+main {
   width: 100%;
+  min-height: calc(100vh - 430px);
 }
 
 .container {
