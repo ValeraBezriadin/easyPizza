@@ -1,0 +1,71 @@
+.footer__socials {
+  padding-top: 25px;
+  padding-bottom: 15px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+}
+.footer__phone {
+  position: relative;
+  padding-left: 25px;
+}
+.footer__phone::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-image: url(./../../../static/icons/phone.svg);
+}
+.footer__pin {
+  position: relative;
+  padding-left: 25px;
+}
+.footer__pin::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 14px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-image: url(./../../../static/icons/pin.svg);
+}
+.footer__wrapper {
+  display: flex;
+  gap: 25px;
+}
+.footer__wrapper > span {
+  padding-left: 25px;
+  position: relative;
+}
+.footer__facebook::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-image: url(./../../../static/icons/facebooksvg.svg);
+}
+.footer__instagram::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-image: url(./../../../static/icons/instagram.svg);
+}

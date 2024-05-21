@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { FC } from "react";
 import css from "./style.module.css";
 import { useBurgerMenuStore } from "@/store/burgerMenuStore";
-import Socials from "../Socials";
+import Contacts from "../Contacts";
 
 const BurgerMenu: FC = () => {
   const { burgerMenuIsOpen } = useBurgerMenuStore();
@@ -39,7 +39,7 @@ const BurgerMenu: FC = () => {
                   <Link href={"#"}>Отследить заказ</Link>
                 </li>
               </ul>
-              <Socials />
+              <Contacts />
               <div className={css.nav__menu_time}>
                 <span>Время работы: с 11:00 до 23:00</span>
               </div>
