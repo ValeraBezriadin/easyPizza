@@ -1,3 +1,9 @@
+import CategoriesMenu from "@/components/ui/CategoriesMenu";
+
 export default function Home() {
-  return <main></main>;
+  return (
+    <main className="main">
+      <CategoriesMenu />
+    </main>
+  );
 }
