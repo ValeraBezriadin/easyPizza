@@ -32,14 +32,10 @@
   color: black;
   transition: color 0.5s ease-in-out;
 }
-.menu__item:hover .menu__path {
-  fill: rgb(226, 53, 53);
-  transition: fill 0.5s ease-in-out;
+.menu__text::first-letter {
+  text-transform: uppercase;
 }
-.menu__item:hover .menu__text {
-  color: rgb(226, 53, 53);
-  transition: color 0.5s ease-in-out;
-}
+
 @media screen and (min-width: 768px) {
   .menu__item {
     flex-direction: column;
