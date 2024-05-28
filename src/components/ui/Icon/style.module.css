@@ -1,0 +1,9 @@
+.active {
+  fill: rgb(226, 53, 53);
+}
+.default {
+  fill: #ff7010;
+}
+.icon {
+  background-repeat: no-repeat;
+}
