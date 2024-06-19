@@ -28,7 +28,7 @@ export function Icon({
         height: `${height}px`,
       }}
     >
-      <use className={css.icon} href={`./icons/sprite.svg#${name}`} />
+      <use className={css.icon} xlinkHref={`/icons/sprite.svg#${name}`} />
     </svg>
   );
 }

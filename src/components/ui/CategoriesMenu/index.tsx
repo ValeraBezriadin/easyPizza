@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./style.module.css";
 import Link from "next/link";
-import { Icon } from "../Icon";
+import { Icon } from "@/components/ui/Icon";
 import categoriesList from "@/utils/categries";
 const CategoriesMenu = () => {
   return (
@@ -10,11 +10,11 @@ const CategoriesMenu = () => {
         <ul className={css.menu__list}>
           {categoriesList.map((i) => (
             <li key={i.name} className={css.menu__item}>
-              <Link href={`/${i.name}`} className={css.menu__link}>
+              <Link href={`/catalog/${i.name}`} className={css.menu__link}>
                 <Icon
                   name={
                     i.name as
-                      | "fire"
+                      | "sale"
                       | "pizza"
                       | "sushi"
                       | "drinks"

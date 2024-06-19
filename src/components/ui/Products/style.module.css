@@ -1,0 +1,8 @@
+.products {
+  position: relative;
+  margin-top: 30px;
+}
+.products__top {
+  display: flex;
+  justify-content: space-between;
+}

@@ -2,7 +2,7 @@
 import React, { FC } from "react";
 import css from "./style.module.css";
 import Image from "next/image";
-import pizza from "@/static/icons/chikenSugarChili.png";
+import pizza from "@/static/chikenSugarChili.png";
 import { userCartMenu } from "@/store/cartMenu";
 import cn from "classnames";
 import closeImg from "@/static/icons/close.svg";

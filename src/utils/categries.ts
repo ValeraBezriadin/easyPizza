@@ -7,7 +7,7 @@ interface IList {
 
 const categoriesList: IList[] = [
   {
-    name: "fire",
+    name: "sale",
     height:24,
     width:24,
     
