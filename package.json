@@ -16,6 +16,7 @@
     "@mui/material": "^5.15.17",
     "@types/fs-extra": "^11.0.4",
     "axios": "^1.6.8",
+    "cookies-next": "^4.2.1",
     "firebase": "^10.12.2",
     "fs-extra": "^11.2.0",
     "glob": "^10.4.1",

@@ -7,7 +7,7 @@ import Image from "next/image";
 import eye from "@/static/eye.png";
 import hidden from "@/static/hidden.png";
 import { schema, IFormInput } from "@/utils/adminValidation";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRouter } from "next/navigation";
 import { app } from "@/assets/firebaseApi";
@@ -45,7 +45,17 @@ const Login: React.FC = () => {
         reset();
       });
   };
-
+  const handleLogout = () => {
+    signOut(auth);
+    router.push("/");
+  };
+  if (user) {
+    return (
+      <div>
+        Y already log in <button onClick={handleLogout}>Log out </button>
+      </div>
+    );
+  }
   return (
     <div className={css.login}>
       <form className={css.login__form} onSubmit={handleSubmit(onSubmit)}>
