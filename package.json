@@ -12,15 +12,20 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@hookform/resolvers": "^3.6.0",
     "@mui/material": "^5.15.17",
     "@types/fs-extra": "^11.0.4",
     "axios": "^1.6.8",
+    "firebase": "^10.12.2",
     "fs-extra": "^11.2.0",
     "glob": "^10.4.1",
     "next": "14.2.1",
     "node-html-parser": "^6.1.13",
     "react": "^18",
     "react-dom": "^18",
+    "react-firebase-hooks": "^5.1.1",
+    "react-hook-form": "^7.52.0",
+    "zod": "^3.23.8",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
