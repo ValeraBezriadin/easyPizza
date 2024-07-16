@@ -46,7 +46,7 @@ export const  pizzaItems:IProduct[] = [
   {
     title:"Чикен Сладкий Чили2",
     description:"Курица, Лук, Перец Халапеньо, Сыр Моцарелла, Томатный соуc",
-    price:12442,
+    price:1442,
     imageUrl: pizza,
     isNew:true,
     isHit:false,
@@ -54,7 +54,7 @@ export const  pizzaItems:IProduct[] = [
   {
     title:"Чикен Сладкий Чили3",
     description:"Курица, Лук, Перец Халапеньо, Сыр Моцарелла, Томатный соуc",
-    price:12424,
+    price:1244,
     imageUrl: pizza,
     isNew:false,
     isHit:false,
@@ -62,7 +62,7 @@ export const  pizzaItems:IProduct[] = [
   {
     title:"Чикен Сладкий Чили4",
     description:"Курица, Лук, Перец Халапеньо, Сыр Моцарелла, Томатный соуc",
-    price:12424,
+    price:1242,
     imageUrl: pizza,
     isNew:false,
     isHit:false,
@@ -70,7 +70,7 @@ export const  pizzaItems:IProduct[] = [
   {
     title:"Чикен Сладкий Чили5",
     description:"Курица, Лук, Перец Халапеньо, Сыр Моцарелла, Томатный соуc",
-    price:124242142,
+    price:1242,
     imageUrl: pizza,
     isNew:true,
     isHit:false,

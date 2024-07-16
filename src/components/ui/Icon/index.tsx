@@ -9,8 +9,7 @@ export function Icon({
   width,
   height,
 
-  active = false,
-  ...props
+  active = true,
 }: SVGProps<SVGSVGElement> & {
   name: IconName;
   width?: number;
@@ -20,7 +19,6 @@ export function Icon({
   return (
     <svg
       className={active ? css.active : css.default}
-      {...props}
       style={{
         display: "inline",
         alignSelf: "center",
@@ -28,7 +26,11 @@ export function Icon({
         height: `${height}px`,
       }}
     >
-      <use className={css.icon} xlinkHref={`/icons/sprite.svg#${name}`} />
+      <use
+        className={css.icon}
+        fill={"red"}
+        xlinkHref={`/icons/sprite.svg#${name}`}
+      />
     </svg>
   );
 }

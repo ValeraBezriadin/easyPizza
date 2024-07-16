@@ -1,0 +1,50 @@
+.form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 8px;
+
+  background-color: #d3fcff;
+}
+
+.form__textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #3ef760;
+  resize: none;
+}
+.form__textarea:active {
+  outline: none;
+  border: none;
+}
+.form__textarea:focus {
+  outline: none;
+  border: none;
+}
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.form__submit {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form__submit:hover {
+  background-color: #0056b3;
+}
+.form__input {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #3ef760;
+  border-radius: 5px;
+}

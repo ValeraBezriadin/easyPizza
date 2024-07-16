@@ -1,0 +1,24 @@
+.admin {
+  min-height: 100vh;
+  padding-top: 10px;
+}
+.admin__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000000;
+  padding: 10px 0;
+}
+.amin__logOut {
+  background-color: aquamarine;
+  padding: 15px;
+  border-radius: 8px;
+}
+.admin__list {
+  padding-top: 10px;
+}
+.admin__item {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #c1fff0;
+}

@@ -34,7 +34,7 @@ const CategoriesMenu = () => {
                   }
                   width={i.width}
                   height={i.height}
-                  active={false}
+                  active={true}
                 />
                 <span className={css.menu__text}>{i.name}</span>
               </Link>
