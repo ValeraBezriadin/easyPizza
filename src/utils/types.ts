@@ -1,4 +1,4 @@
 export interface IParams {
-  id:string;
+  slug:string;
   [key:string]:string;
 }

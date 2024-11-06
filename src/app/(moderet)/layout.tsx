@@ -1,7 +1,7 @@
 "use client";
 import "@/app/globals.css";
 import { app } from "@/assets/firebaseApi";
-import { getAuth, signOut } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";

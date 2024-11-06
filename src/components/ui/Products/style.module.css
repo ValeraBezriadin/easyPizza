@@ -6,3 +6,6 @@
   display: flex;
   justify-content: space-between;
 }
+.products__title::first-letter {
+  text-transform: uppercase;
+}

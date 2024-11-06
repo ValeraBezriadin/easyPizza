@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import css from "./style.module.css";
 import useImage from "@/components/hooks/useImage";
-import Image from "next/image";
-import AdminFile from "./AdminFile";
 
+import AdminFile from "./AdminFile";
+import { setDoc, doc } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+import { app } from "@/assets/firebaseApi";
+import useFetchGroups from "@/store/useFetchGroups";
 interface FormData {
   groupName: string;
   groupPhoto: FileList | null;
   groupDescription: string;
 }
 const schema = z.object({
-  groupName: z.string().min(1, "Name of group is requere"),
+  groupName: z
+    .string()
+    .min(1, "Name of group is requere")
+    .transform((name) => name.toLowerCase()),
   groupPhoto: z
     .custom<FileList>()
     .transform((file) => file.length > 0 && file.item(0))
@@ -36,19 +42,27 @@ const AdminAddGroup: React.FC = () => {
     resolver: zodResolver(schema),
   });
 
-  const { upLoadImage, downloadUrl, uploading } = useImage();
+  const { upLoadImage } = useImage();
   const [imageUrl, setImageUrl] = useState("");
-  const onSubmit = (data: FormData) => {
+  const { fetchGroups } = useFetchGroups();
+  const db = getFirestore(app);
+  const onSubmit = async (data: FormData) => {
     try {
-      upLoadImage(data.groupPhoto).then((res) => {
-        console.log("download", downloadUrl);
-        if (res) {
-          console.log("res add", res);
-          console.log("download", downloadUrl);
-        }
-      });
-
-      console.log(123123, { ...data, groupPhoto: downloadUrl });
+      const file = data.groupPhoto;
+      if (file) {
+        const url = await upLoadImage(file);
+        const docRef = doc(db, "categories", data.groupName);
+        await setDoc(docRef, {
+          ...data,
+          groupPhoto: url,
+          products: [
+            { name: "apple", price: 33 },
+            { name: "banana", price: 43 },
+          ],
+        });
+        console.log("Document written with ID: ", docRef.id);
+      }
+      fetchGroups();
     } catch (error) {
       alert(error);
     }
@@ -97,7 +111,7 @@ const AdminAddGroup: React.FC = () => {
       </div>
 
       <button type="submit" className={css.form__submit}>
-        Создать группу
+        Create Group
       </button>
     </form>
   );

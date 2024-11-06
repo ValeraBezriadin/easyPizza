@@ -1,23 +1,24 @@
 import Image from "next/image";
 import css from "./style.module.css";
+import { UseFormRegister } from "react-hook-form";
 
-interface AdminFileProps {
-  formdata: {
-    groupName: string;
-    groupPhoto: FileList | null;
-    groupDescription: string;
-  };
+interface IAdminFileProps {
+  formdata: UseFormRegister<FormData>;
   setImageUrl: React.Dispatch<React.SetStateAction<string>>;
   imageUrl: string;
 }
-const AdminFile: React.FC<AdminFileProps> = ({
+const AdminFile: React.FC<IAdminFileProps> = ({
   formdata,
   setImageUrl,
   imageUrl,
 }) => {
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setImageUrl(URL.createObjectURL(file));
+  console.log("sigma", formdata);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      setImageUrl(URL.createObjectURL(file));
+    }
   };
   const clearFile = () => {
     setImageUrl("");

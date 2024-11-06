@@ -11,7 +11,7 @@ export default function HomeLayout({
     <>
       <PreloadResources />
       <Header />
-      <main className="main">{children}</main>
+      <main className={"main"}>{children}</main>
       <Fotter />
     </>
   );

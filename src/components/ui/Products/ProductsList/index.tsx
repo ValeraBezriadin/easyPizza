@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import css from "./style.module.css";
 import ProductsItem from "../ProductsItem";
 import { IProduct } from "@/utils/productsItem";

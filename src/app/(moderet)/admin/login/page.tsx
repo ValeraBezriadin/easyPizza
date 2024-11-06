@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import css from "./style.module.css";
@@ -22,7 +22,7 @@ const Login: React.FC = () => {
     resolver: zodResolver(schema),
   });
   const auth = getAuth(app);
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -33,7 +33,7 @@ const Login: React.FC = () => {
 
   const onSubmit: SubmitHandler<IFormInput> = ({ password, email }) => {
     signInWithEmailAndPassword(auth, email, password)
-      .then((response) => {
+      .then(() => {
         router.push("/admin");
       })
       .catch((error) => {

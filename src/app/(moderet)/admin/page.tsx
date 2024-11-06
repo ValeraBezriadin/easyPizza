@@ -6,28 +6,40 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import AdminPopUp from "@/components/admin/AdminPopUp";
 import AdminAddGroup from "@/components/admin/AdminAddGroup";
+import useFetchGroups from "@/store/useFetchGroups";
 
 const Admin = () => {
   const auth = getAuth(app);
   const [user, loading] = useAuthState(auth);
   const [isOpenAddGroup, setIsOpenAddGroup] = useState(false);
+  const { collections, fetchGroups, fetchLoading } = useFetchGroups();
 
-  if (loading) {
-    return <div>loadding</div>;
-  }
   const handleLogOut = () => {
     signOut(auth);
   };
+
   const handleAddGroup = () => {
     setIsOpenAddGroup((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (!loading) {
+      fetchGroups();
+    }
+  }, [loading]);
+  console.log("products", collections);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <div className={css.admin}>
         <div className="container">
           <div className={css.admin__inner}>
             Admin name: {user && user.email}{" "}
-            <button className={css.amin__logOut} onClick={handleLogOut}>
+            <button className={css.admin__logOut} onClick={handleLogOut}>
               Log out{" "}
             </button>
           </div>
@@ -35,6 +47,15 @@ const Admin = () => {
             <button className={css.admin__item} onClick={handleAddGroup}>
               Add group
             </button>
+          </div>
+          <div>
+            {fetchLoading ? (
+              collections?.map((i) => (
+                <h1 key={i.groupName}>{i.groupDescription}</h1>
+              ))
+            ) : (
+              <h1>Loading....</h1>
+            )}
           </div>
         </div>
       </div>
