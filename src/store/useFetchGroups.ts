@@ -13,14 +13,14 @@ const fetchGroups = create<IColections>((set) => ({
     try {
       const querySnapshot = await getDocs(collection(db, 'categories'));
       
-      // Map the documents data to match the IColection interface
+    
       const collections: IColection[] = querySnapshot.docs.map((doc) => {
         const data = doc.data();
         return {
           groupName: data.groupName,
           groupPhoto: data.groupPhoto,
           groupDescription: data.groupDescription,
-          products: data.products || [], // Assuming `products` could be an empty array
+          products: data.products || [], 
         };
       });
       

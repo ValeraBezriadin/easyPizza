@@ -28,7 +28,7 @@ const Admin = () => {
     }
   }, [loading]);
   console.log("products", collections);
-
+  console.log("products", fetchLoading);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -49,7 +49,7 @@ const Admin = () => {
             </button>
           </div>
           <div>
-            {fetchLoading ? (
+            {!fetchLoading ? (
               collections?.map((i) => (
                 <h1 key={i.groupName}>{i.groupDescription}</h1>
               ))
