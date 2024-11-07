@@ -4,17 +4,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import css from "./style.module.css";
 import useImage from "@/components/hooks/useImage";
-
+import IFormData from "@/utils/formDataInterface";
 import AdminFile from "./AdminFile";
 import { setDoc, doc } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 import { app } from "@/assets/firebaseApi";
 import useFetchGroups from "@/store/useFetchGroups";
-interface FormData {
-  groupName: string;
-  groupPhoto: FileList | null;
-  groupDescription: string;
-}
+
 const schema = z.object({
   groupName: z
     .string()
@@ -38,7 +34,7 @@ const AdminAddGroup: React.FC = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormData>({
+  } = useForm<IFormData>({
     resolver: zodResolver(schema),
   });
 
@@ -46,10 +42,12 @@ const AdminAddGroup: React.FC = () => {
   const [imageUrl, setImageUrl] = useState("");
   const { fetchGroups } = useFetchGroups();
   const db = getFirestore(app);
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (data: IFormData) => {
     try {
       const file = data.groupPhoto;
+
       if (file) {
+        console.log("data", file);
         const url = await upLoadImage(file);
         const docRef = doc(db, "categories", data.groupName);
         await setDoc(docRef, {

@@ -6,7 +6,7 @@ const useImage = () => {
   const [uploading, setUploading] = useState(false);
   const [downloadUrl, setDownloadUrl] = useState("");
 
-  const upLoadImage = async (file) => {
+  const upLoadImage = async (file:File) => {
     const storage = getStorage();
     const uniqueFileName = `${file.name.split('.')[0]}_${uuidv4()}.${file.name.split('.').pop()}`;
     const storageRef = ref(storage, `image/groups/${uniqueFileName}`);

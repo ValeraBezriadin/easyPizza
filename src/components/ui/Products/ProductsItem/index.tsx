@@ -1,6 +1,5 @@
 import Image from "next/image";
 import css from "./style.module.css";
-import React, { FC } from "react";
 import { StaticImageData } from "next/image";
 interface IProps {
   item: IProduct;
@@ -8,12 +7,12 @@ interface IProps {
 interface IProduct {
   title: string;
   description: string;
-  price: string;
+  price: number;
   imageUrl: StaticImageData;
   isNew: boolean;
   isHit: boolean;
 }
-const ProductsItem: FC<IProps> = ({ item }) => {
+const ProductsItem = ({ item }: IProps) => {
   const { description, price, title, imageUrl, isNew, isHit } = item;
   return (
     <>

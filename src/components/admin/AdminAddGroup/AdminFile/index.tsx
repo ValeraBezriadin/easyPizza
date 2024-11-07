@@ -1,9 +1,10 @@
 import Image from "next/image";
 import css from "./style.module.css";
+import IFormData from "@/utils/formDataInterface";
 import { UseFormRegister } from "react-hook-form";
 
 interface IAdminFileProps {
-  formdata: UseFormRegister<FormData>;
+  formdata: UseFormRegister<IFormData>;
   setImageUrl: React.Dispatch<React.SetStateAction<string>>;
   imageUrl: string;
 }
@@ -12,8 +13,6 @@ const AdminFile: React.FC<IAdminFileProps> = ({
   setImageUrl,
   imageUrl,
 }) => {
-  console.log("sigma", formdata);
-
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {

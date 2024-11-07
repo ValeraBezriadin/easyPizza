@@ -1,15 +1,15 @@
-import { StaticImageData } from 'next/image';
-import { IProduct } from './productsItem';
-interface IColection {
-  groupDescription:string,
-  groupName:string,
-  groupPhoto:StaticImageData,
-  products:IProduct[],
+
+// import { IProduct } from './productsItem';
+export interface IColection {
+  groupDescription: string;
+  groupName: string;
+  groupPhoto: string; 
+  // products: IProduct[];
+  products: {name:string,price:number}
 
 }
-interface IColections {
-  collections: IColection[] | [] | undefined,
-  fetchLoading:boolean,
-  fetchGroups:()=>void,
+export interface IColections {
+  collections: IColection[] | [] | undefined;
+  fetchLoading: boolean;
+  fetchGroups: () => void;
 }
-export default IColections
