@@ -6,59 +6,39 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import AdminPopUp from "@/components/admin/AdminPopUp";
 import AdminAddGroup from "@/components/admin/AdminAddGroup";
-import useFetchGroups from "@/store/useFetchGroups";
+
+import AdminGroups from "@/components/admin/AdminGroups";
 
 const Admin = () => {
   const auth = getAuth(app);
   const [user, loading] = useAuthState(auth);
   const [isOpenAddGroup, setIsOpenAddGroup] = useState(false);
-  const { collections, fetchGroups, fetchLoading } = useFetchGroups();
-
-  const handleLogOut = () => {
-    signOut(auth);
-  };
+  const [isDeleteModeGroup, setisDeleteModeGroup] = useState(false);
 
   const handleAddGroup = () => {
     setIsOpenAddGroup((prev) => !prev);
   };
+  const handleDelete = () => {
+    setisDeleteModeGroup((prev) => !prev);
+    console.log("delete");
+  };
+  console.log("loading", loading);
 
-  useEffect(() => {
-    if (!loading) {
-      fetchGroups();
-    }
-  }, [loading]);
-  console.log("products", collections);
-  console.log("products", fetchLoading);
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
     <>
-      <div className={css.admin}>
-        <div className="container">
-          <div className={css.admin__inner}>
-            Admin name: {user && user.email}{" "}
-            <button className={css.admin__logOut} onClick={handleLogOut}>
-              Log out{" "}
-            </button>
-          </div>
-          <div className={css.admin__list}>
-            <button className={css.admin__item} onClick={handleAddGroup}>
-              Add group
-            </button>
-          </div>
-          <div>
-            {!fetchLoading ? (
-              collections?.map((i) => (
-                <h1 key={i.groupName}>{i.groupDescription}</h1>
-              ))
-            ) : (
-              <h1>Loading....</h1>
-            )}
-          </div>
-        </div>
+      <div className={css.admin__interect}>
+        <button className={css.admin__item} onClick={handleAddGroup}>
+          Add group
+        </button>
+        <button className={css.admin__item} onClick={handleDelete}>
+          Delete group
+        </button>
       </div>
+      <AdminGroups loading={loading} deleteMode={isDeleteModeGroup} />
       <AdminPopUp
         activePopup={isOpenAddGroup}
         setActivePopup={setIsOpenAddGroup}

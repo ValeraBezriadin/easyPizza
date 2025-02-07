@@ -8,8 +8,17 @@ export interface IColection {
   products: {name:string,price:number}
 
 }
+interface DocumentIdWithPhoto {
+  id: string;
+  photo: string;
+}
 export interface IColections {
+  
   collections: IColection[] | [] | undefined;
   fetchLoading: boolean;
-  fetchGroups: () => void;
+  documentIds:DocumentIdWithPhoto[];
+  fetchGroups: () => Promise<void>;
+  fetchDocumentsId: () => Promise<void>;
+  deleteGroup: (groupId: string) => Promise<void>;
+  itemOfGroup: (id: string) => Promise<IColection | null>;
 }

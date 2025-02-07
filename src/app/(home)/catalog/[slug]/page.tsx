@@ -4,10 +4,9 @@ import { db } from "@/assets/firebaseApi";
 import { IParams } from "@/utils/types";
 
 export async function generateStaticParams() {
-  const collectionRef = collection(db, "yourCollectionName");
+  const collectionRef = collection(db, "categories");
   const querySnapshot = await getDocs(collectionRef);
 
-  // Create an array of valid IDs from Firebase
   const list = querySnapshot.docs.map((doc) => doc.id);
   console.log("list", list);
 
@@ -18,18 +17,12 @@ export async function generateStaticParams() {
 
 export default async function CatalogPage({ params }: { params: IParams }) {
   const { slug } = params;
-  console.log("hi");
-
-  // Fetch the list of valid IDs from Firebase
   const collectionRef = collection(db, "categories");
   const querySnapshot = await getDocs(collectionRef);
   const list = querySnapshot.docs.map((doc) => doc.id);
 
-  console.log("list", list);
-  console.log("sigma");
-
   if (!list.includes(slug)) {
-    notFound(); // Trigger 404 if the slug is not in the list
+    notFound();
   }
 
   return (

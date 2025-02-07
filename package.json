@@ -6,7 +6,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build:icons": "npx tsx ./build-icons.mts",
     "lint": "next lint"
   },
   "dependencies": {

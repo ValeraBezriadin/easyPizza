@@ -45,7 +45,7 @@
   }
   .menu__list {
     gap: 15px;
-    justify-content: space-between;
+    justify-content: center;
   }
   .menu__link {
     flex-direction: column;
